@@ -47,6 +47,7 @@ const ResponsiveAppBar = () => {
         <Toolbar disableGutters>
           <Avatar
             alt="Bayes"
+            // src="/images/bayes.gif"
             src="/images/bayes.gif"
             sx={{ width: 40, height: 40, margin: 1.5 }}
           />
