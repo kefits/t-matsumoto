@@ -6,7 +6,7 @@ const nextConfig = {
   assetPrefix: process.env.NODE_ENV === "production" ? "/t-matsumoto" : "",
   trailingSlash: true,
   publicRuntimeConfig: {
-    urlPrefix: process.env.URL_PREFIX ? '/' + process.env.URL_PREFIX : ''
+    urlPrefix: process.env.NODE_ENV === "production" ? "/t-matsumoto" : "",
   },
 }
 
