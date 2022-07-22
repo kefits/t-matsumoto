@@ -4,9 +4,10 @@ import Stack from "@mui/material/Stack";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
-import B from "../../utils/basepath"
+import { url } from "../../utils/url"
 
 export default function ProfileBox() {
+  console.log(url("/images/profile.jpg"));
   return (
     <React.Fragment>
       <CssBaseline />
@@ -15,7 +16,7 @@ export default function ProfileBox() {
           <Stack direction="row" spacing={2} justifyContent="center" m={5}>
             <Avatar
               alt="Tomoki Matsumoto"
-              src={B("images/profile.jpg")}
+              src={url("/images/profile.jpg")}
               sx={{ width: 150, height: 150, margin: 2.5 }}
             />
           </Stack>
