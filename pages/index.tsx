@@ -7,6 +7,7 @@ import ProfileBox from "../components/common/profile"
 import { SiTwitter } from "react-icons/si";
 import { GrGithub } from "react-icons/gr";
 import { IoLogoLinkedin } from "react-icons/io";
+import Box from "@mui/material/Box";
 
 const Home: NextPage = () => {
   return (
@@ -27,16 +28,16 @@ const Home: NextPage = () => {
         <div className={styles.grid}>
           <a href="https://twitter.com/kefism" className={styles.card}>
             <h2>Twitter</h2>
-            <center>
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
               <SiTwitter size={30} />
-            </center>
+            </Box>
           </a>
 
           <a href="https://github.com/kefits" className={styles.card}>
             <h2>GitHub</h2>
-            <center>
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
               <GrGithub size={30} />
-            </center>
+            </Box>
           </a>
 
           <a
@@ -44,9 +45,9 @@ const Home: NextPage = () => {
             className={styles.card}
           >
             <h2>LinkedIn</h2>
-            <center>
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
               <IoLogoLinkedin size={30} />
-            </center>
+            </Box>
           </a>
         </div>
       </main>
