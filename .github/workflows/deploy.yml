@@ -1,4 +1,4 @@
-name: gh-pages
+name: Deploy to GitHub Pages
 
 # main ブランチ の push 時にこのワークフローを実行する
 on:
