@@ -7,7 +7,6 @@ import Container from "@mui/material/Container";
 import { url } from "../../utils/url"
 
 export default function ProfileBox() {
-  console.log(url("/images/profile.jpg"));
   return (
     <React.Fragment>
       <CssBaseline />
