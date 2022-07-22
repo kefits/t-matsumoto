@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  basePath: process.env.GITHUB_ACTIONS ? "/t-matsumoto.git" : "",
+  basePath: process.env.GITHUB_ACTIONS ? "/t-matsumoto" : "",
   trailingSlash: true,
 }
 
