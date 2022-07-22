@@ -13,9 +13,10 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 // import AdbIcon from "@mui/icons-material/Adb";
 // import {Link} from "react-router-dom"
+import { url } from "../../utils/url";
 
 const pages = ["Home", "Research", "Blog"];
-const links = ["/", "research", "https://kefism.hatenablog.com/"];
+const links = [url("/"), "research", "https://kefism.hatenablog.com/"];
 // const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
@@ -48,14 +49,14 @@ const ResponsiveAppBar = () => {
           <Avatar
             alt="Bayes"
             // src="/images/bayes.gif"
-            src="/images/bayes.gif"
+            src={url("/images/bayes.gif")}
             sx={{ width: 40, height: 40, margin: 1.5 }}
           />
           <Typography
             variant="h6"
             noWrap
             component="a"
-            href="/"
+            href={url("/")}
             sx={{
               mr: 2,
               display: { xs: "none", md: "flex" },
