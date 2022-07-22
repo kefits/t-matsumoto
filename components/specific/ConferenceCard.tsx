@@ -37,7 +37,7 @@ export default function PaperCard({ conferenceData }: Props) {
   return (
     <Box sx={{ minWidth: 275 }}>
       {conferenceData.map((data: ConferenceType) => {
-        return <Card variant="outlined">{card(data)}</Card>;
+        return <Card key="conference" variant="outlined">{card(data)}</Card>;
       })}
     </Box>
   );

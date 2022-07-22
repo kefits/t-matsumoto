@@ -35,7 +35,7 @@ export default function PaperCard({ paperData }: Props) {
       {
         paperData.map((data: paperType) => {
           return (
-            <Card variant="outlined">{card(data)}</Card>
+            <Card key="paper" variant="outlined">{card(data)}</Card>
           );
         })
       }
