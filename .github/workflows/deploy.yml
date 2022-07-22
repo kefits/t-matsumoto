@@ -1,38 +1,35 @@
-name: Deploy to GitHub Pages
-
-# main ブランチ の push 時にこのワークフローを実行する
-on:
- push:
-   branches:
-     - main
-
+name: Build and Deploy
+on: [push]
 jobs:
- build:
-   runs-on: ubuntu-20.04
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./src
 
-   steps:
-     # main ブランチを取得する
-     - name: Checkout
-       uses: actions/checkout@v2
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
+        with:
+          persist-credentials: false
 
-     # Node.js のセットアップをする
-     - name: Setup Node
-       uses: actions/setup-node@v2
-       with:
-         node-version: 14.x
-         cache: yarn
+      - name: Cache  💾
+        uses: actions/cache@v2
+        with:
+          path: ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
 
-     # パッケージをインストールする
-     - name: Install dependencies
-       run: yarn --frozen-lockfile
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        uses: actions/setup-node@v1
+      - run: npm install
+      - run: npm run build
+        env:
+            CI: true
 
-     # ビルドする
-     - name: Build
-       run: yarn build
-
-     # GitHub Pages にデプロイする
-     - name: Deploy
-       uses: peaceiris/actions-gh-pages@v3
-       with:
-         github_token: ${{ secrets.GITHUB_TOKEN }}
-         publish_dir: out
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: src/out # The folder the action should deploy.
+          CLEAN: true # Automatically remove deleted files from the deploy branch
