@@ -5,8 +5,8 @@
   "homepage": "https://kefits.github.io/t-matsumoto/",
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next-sitemap --config sitemap.config.js",
-    "export": "next export",
+    "build": "next build",
+    "export": "next export && next-sitemap --config sitemap.config.js",
     "start": "next start",
     "lint": "next lint"
   },
