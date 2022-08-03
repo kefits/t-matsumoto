@@ -2,7 +2,7 @@
 
 module.exports = {
   siteUrl: 'https://kefits.github.io/t-matsumoto/',
-  generateRobotsTxt: true,
+  // generateRobotsTxt: true,
   sitemapSize: 7000,
   outDir: './public',
 };
