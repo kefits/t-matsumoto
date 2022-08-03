@@ -1,9 +1,0 @@
-# *
-User-agent: *
-Allow: /
-
-# Host
-Host: https://kefits.github.io/t-matsumoto/
-
-# Sitemaps
-Sitemap: https://kefits.github.io/t-matsumoto/sitemap.xml
